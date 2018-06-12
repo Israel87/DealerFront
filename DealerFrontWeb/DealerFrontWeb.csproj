@@ -71,7 +71,6 @@
   <ItemGroup>
     <Content Include="app\controllers\admin\features\counterparty.js" />
     <Content Include="app\controllers\admin\features\currency.js" />
-    <Content Include="app\controllers\admin\securities\eurobonds.js" />
     <Content Include="app\controllers\admin\users\createusers.js" />
     <Content Include="app\controllers\admin\users\viewusers.js" />
     <Content Include="app\controllers\trade\eurobond\eurobuy.js" />
@@ -83,6 +82,7 @@
     <Content Include="app\controllers\trade\treasurybills\tbillsbuy.js" />
     <Content Include="app\controllers\trade\treasurybills\tbillssell.js" />
     <Content Include="app\controllers\trade\treasurybills\tbillssetupvolume.js" />
+    <Content Include="app\services\securityService.js" />
     <Content Include="app\views\pages\admin\features\counterparty.html" />
     <Content Include="app\views\pages\admin\features\currency.html" />
     <Content Include="app\views\pages\admin\securities\eurobonds.html" />
@@ -108,8 +108,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\controllers\admin\securities\fgbonds.js" />
-    <Content Include="app\controllers\admin\securities\treasurybills.js" />
+    <Content Include="app\controllers\admin\securityController.js" />
     <Content Include="app\controllers\changePasswordController.js" />
     <Content Include="app\controllers\dashboard.js" />
     <Content Include="app\controllers\errorController.js" />
@@ -124,7 +123,7 @@
     <Content Include="app\services\usersService.js" />
     <Content Include="app\views\pages\admin\securities\fg-bonds.html" />
     <Content Include="app\views\pages\dashboard.html" />
-    <Content Include="app\views\pages\admin\securities\treasurybills.html" />
+    <Content Include="app\views\pages\admin\securities\create-security.html" />
     <Content Include="gulp-tasks\build-dist.js" />
     <Content Include="gulp-tasks\vendors.js" />
     <Content Include="gulpfile.js" />

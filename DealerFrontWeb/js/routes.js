@@ -131,13 +131,13 @@ angular
   })
 
 
-.state('app.treasurybills', {
-    url: '/securities/tbills',
-    templateUrl: 'app/views/pages/admin/securities/treasurybills.html',
+.state('app.createsecurity', {
+    url: '/securities/create',
+    templateUrl: 'app/views/pages/admin/securities/create-security.html',
     ncyBreadcrumb: {
-        label: 'Treasury Bills',
+        label: 'Create Security',
     },
-    controller: 'TreasuryBillsController'
+    controller: 'SecurityController'
 })
 
     .state('app.fgbonds', {

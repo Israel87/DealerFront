@@ -1,0 +1,38 @@
+﻿<div class="animated fadeIn">
+
+
+    <div class="row" ng-init="initPage()">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <b>Create Securities</b>
+                </div>
+                <div class="card-body">
+                    <!--{{message}}-->
+
+                    <div class="row container">
+                        <div class="form-group col-sm-12">
+                            <label for="name" class="col-sm-7 control-label"> <b>Security Name</b> </label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="name" id="name" ng-model="securityModel.InstrumentName">
+                            </div>
+                          
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="name" class="col-sm-7 control-label"><b>Security Type</b>  </label>
+                            <div class="col-sm-5">
+                               
+                                <select class="form-control" id="securitytype" ng-options="x.Name for x in instrumentTypes" ng-model="securityModel.InstrumentType"></select>
+                                <br />
+                                <button class="btn btn-primary" style="width: 150px" ng-click="createSecurity()"><b>Create</b> </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
