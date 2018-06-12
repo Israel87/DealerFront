@@ -83,6 +83,7 @@
     <Content Include="app\controllers\trade\treasurybills\tbillssell.js" />
     <Content Include="app\controllers\trade\treasurybills\tbillssetupvolume.js" />
     <Content Include="app\services\securityService.js" />
+    <Content Include="img\PARTHIAN jo.JPG" />
     <Content Include="app\views\pages\admin\features\counterparty.html" />
     <Content Include="app\views\pages\admin\features\currency.html" />
     <Content Include="app\views\pages\admin\securities\eurobonds.html" />
@@ -98,6 +99,8 @@
     <Content Include="app\views\pages\trades\treasurybills\buy.html" />
     <Content Include="app\views\pages\trades\treasurybills\sell.html" />
     <Content Include="app\views\pages\trades\treasurybills\setupvolume.html" />
+    <Content Include="img\parthianlogo.png" />
+    <Content Include="img\parthianlogo2.png" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
     <None Include="Web.Debug.config">
@@ -121,7 +124,7 @@
     <Content Include="app\services\customersService.js" />
     <Content Include="app\services\httpInterceptors.js" />
     <Content Include="app\services\usersService.js" />
-    <Content Include="app\views\pages\admin\securities\fg-bonds.html" />
+    <Content Include="app\views\pages\admin\securities\view-securities.html" />
     <Content Include="app\views\pages\dashboard.html" />
     <Content Include="app\views\pages\admin\securities\create-security.html" />
     <Content Include="gulp-tasks\build-dist.js" />

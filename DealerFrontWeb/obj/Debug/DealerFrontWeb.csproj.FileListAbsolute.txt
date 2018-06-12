@@ -35,8 +35,8 @@ C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\DealerFrontWeb.d
 C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\DealerFrontWeb.pdb
 C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.csprojAssemblyReference.cache
 C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.csproj.CoreCompileInputs.cache
 C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.csproj.CopyComplete
 C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.dll
 C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.pdb
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.csprojAssemblyReference.cache

@@ -2,33 +2,34 @@
     <nav class="sidebar-nav">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" ui-sref-active="active" ui-sref="app.dashboard"><i class="icon-speedometer"></i> Dashboard <span class="badge badge-info"></span></a>
+                <br />
+                <a class="nav-link" ui-sref-active="active" ui-sref="app.dashboard"><i class="icon-speedometer"></i><b style="color: #e2c833">Dashboard</b>  <span class="badge badge-info"></span></a>
             </li>
             <li class="divider"></li>
             <li class="nav-title">
-                <i class="icon-lock"></i> &nbsp;&nbsp;ADMIN
+                <i class="icon-lock"></i> &nbsp;&nbsp;<b>ADMIN</b>
             </li>
-           
+
             <li class="nav-item nav-dropdown">
-                <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-anchor"></i> Securities</a>
+                <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-anchor"></i> <b style="color: #e2c833">Securities</b></a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a class="nav-link" ui-sref-active="active" ui-sref="app.createsecurity"><i class="fa fa-money"></i> Create Securities </a>
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.createsecurity"><i class="fa fa-money"></i>Create Securities </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ui-sref-active="active" ui-sref="app.fgbonds"><i class="fa fa-hashtag"></i> View Securities </a>
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.fgbonds"><i class="fa fa-hashtag"></i>View Securities</a>
                     </li>
                     <!--<li class="nav-item">
-                        <a class="nav-link" ui-sref-active="active" ui-sref="app.eurobonds"><i class="fa fa-eur"></i> Euro Bonds </a>
-                    </li>-->
+                <a class="nav-link" ui-sref-active="active" ui-sref="app.eurobonds"><i class="fa fa-eur"></i> Euro Bonds </a>
+            </li>-->
                 </ul>
             </li>
 
             <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.icons')}">
-                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.icons')}" href="#"><i class="fa fa-list"></i> Features</a>
+                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.icons')}" href="#"><i class="fa fa-list"></i><b style="color: #e2c833">Features</b></a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a class="nav-link" ui-sref-active="active" ui-sref="app.counterparty"><i class="fa fa-exchange"></i> Counterparty </a>
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.counterparty"><i class="fa fa-exchange"></i>Counterparty </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.currency"><i class="fa fa-money"></i> Currency</a>
@@ -38,7 +39,7 @@
 
 
             <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.icons')}">
-                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.icons')}" href="#"><i class="icon-user-following"></i> Users</a>
+                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.icons')}" href="#"><i class="icon-user-following"></i> <b style="color: #e2c833">Users</b></a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.createuser"><i class="fa fa-user-plus"></i> Create Users </a>
@@ -51,10 +52,10 @@
 
             <li class="divider"></li>
             <li class="nav-title">
-                <i class="fa fa-exchange"></i> &nbsp;&nbsp; TRADES
+                <i class="fa fa-exchange"></i> &nbsp;&nbsp; <b>TRADES</b>
             </li>
             <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.icons')}">
-                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.icons')}" href="#"><i class="fa fa-money"></i> Treasury Bills</a>
+                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.icons')}" href="#"><i class="fa fa-money"></i><b style="color: #e2c833">Treasury Bills</b></a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.tbillssetupvolume"><i class="fa fa-rss"></i> Setup Volume </a>
@@ -69,7 +70,7 @@
             </li>
 
             <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.icons')}">
-                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.icons')}" href="#"><i class="fa fa-hashtag"></i> FGN Bonds</a>
+                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.icons')}" href="#"><i class="fa fa-hashtag"></i><b style="color: #e2c833"> FGN Bonds</b></a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.fgnsetupvolume"><i class="fa fa-rss"></i> Setup Volume </a>
@@ -85,7 +86,7 @@
 
 
             <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.icons')}">
-                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.icons')}" href="#"><i class="fa fa-eur"></i> Euro Bonds</a>
+                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.icons')}" href="#"><i class="fa fa-eur"></i><b style="color:#e2c833">Euro Bonds</b> </a>
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.eurosetupvolume"><i class="fa fa-rss"></i> Setup Volume </a>
@@ -101,7 +102,10 @@
 
             <li class="divider"></li>
             <li class="nav-title">
-                <i class="fa fa-line-chart"></i> &nbsp;&nbsp; REPORTS
+                <i class="fa fa-line-chart"></i> &nbsp;&nbsp;<b>REPORTS</b>
+            </li>
+            <li class="nav-title">
+                <i class="fa fa-power-off"></i> &nbsp;&nbsp;<b>LOGOUT</b>
             </li>
 
         </ul><br /><br /><br />

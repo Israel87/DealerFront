@@ -3,9 +3,9 @@
     .controller('SecurityController', SecurityController);
 
 
-SecurityController.$inject = ['$scope', 'authService', '$location', '$routeParams', 'securityService','pinesNotifications'];
+SecurityController.$inject = ['$scope', 'authService', '$location', '$routeParams', 'securityService', 'pinesNotifications'];
 
-function SecurityController($scope, authService, $location, $routeParams, securityService,pinesNotifications ) {
+function SecurityController($scope, authService, $location, $routeParams, securityService, pinesNotifications ) {
     
     if (!authService.user.isAuthenticated) {
         $location.path("/login");
@@ -32,6 +32,13 @@ function SecurityController($scope, authService, $location, $routeParams, securi
             .catch(function (error) {
                 console.log(error)
             });
+
+        // get the list of securities available
+        securityService.GetAllSecurities()
+            .then(function (result) {
+                console.log(result);
+                vm.getsecurities = result.data;             
+            });
     }
 
     vm.createSecurity = function () {
@@ -45,6 +52,7 @@ function SecurityController($scope, authService, $location, $routeParams, securi
                     text: "Security created successfully!"
                 });
                 clearCreateSecurityForm();
+               
             })
             .catch(function (error) {
                 console.log(error)

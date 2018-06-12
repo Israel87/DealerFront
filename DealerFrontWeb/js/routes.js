@@ -141,12 +141,12 @@ angular
 })
 
     .state('app.fgbonds', {
-        url: '/securities/bonds',
-        templateUrl: 'app/views/pages/admin/securities/fg-bonds.html',
+        url: '/securities/view',
+        templateUrl: 'app/views/pages/admin/securities/view-securities.html',
         ncyBreadcrumb: {
-            label: 'FG Bond',
+            label: 'View Securities',
         },
-        controller: 'FGBondController'
+        controller: 'SecurityController'
         })
 
       .state('app.eurobonds', {

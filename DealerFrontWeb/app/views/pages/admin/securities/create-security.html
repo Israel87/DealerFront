@@ -10,11 +10,11 @@
                 <div class="card-body">
                     <!--{{message}}-->
 
-                    <div class="row container">
+                    <form class="row container" name="createSecurityForm">
                         <div class="form-group col-sm-12">
                             <label for="name" class="col-sm-7 control-label"> <b>Security Name</b> </label>
                             <div class="col-sm-5">
-                                <input type="text" class="form-control" name="name" id="name" ng-model="securityModel.InstrumentName">
+                                <input type="text" class="form-control" name="name" id="name" ng-model="securityModel.InstrumentName" required>
                             </div>
                           
                         </div>
@@ -22,12 +22,12 @@
                             <label for="name" class="col-sm-7 control-label"><b>Security Type</b>  </label>
                             <div class="col-sm-5">
                                
-                                <select class="form-control" id="securitytype" ng-options="x.Name for x in instrumentTypes" ng-model="securityModel.InstrumentType"></select>
+                                <select class="form-control" id="securitytype" ng-options="x.Name for x in instrumentTypes" ng-model="securityModel.InstrumentType" required></select>
                                 <br />
-                                <button class="btn btn-primary" style="width: 150px" ng-click="createSecurity()"><b>Create</b> </button>
+                                <button class="btn btn-primary" style="width: 150px" ng-click="createSecurity()" ng-disabled="createSecurityForm.$invalid"><b>Create</b> </button>
                             </div>
                         </div>
-                    </div>
+                    </form>
                     
                 </div>
             </div>
