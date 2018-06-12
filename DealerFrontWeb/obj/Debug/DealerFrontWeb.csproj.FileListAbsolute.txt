@@ -1,0 +1,42 @@
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\roslyn\csc.exe
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\roslyn\vbc.exe
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\roslyn\VBCSCompiler.exe
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\DealerFrontWeb.dll.config
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\DealerFrontWeb.dll
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\DealerFrontWeb.pdb
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.csprojResolveAssemblyReference.cache
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.dll
+C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.pdb
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\roslyn\csc.exe
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\roslyn\vbc.exe
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\roslyn\VBCSCompiler.exe
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\DealerFrontWeb.dll.config
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\DealerFrontWeb.dll
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\DealerFrontWeb.pdb
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.csprojAssemblyReference.cache
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.csproj.CoreCompileInputs.cache
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.csproj.CopyComplete
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.dll
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.pdb

@@ -1,0 +1,113 @@
+﻿<!--
+ * CoreUI - Open Source Bootstrap Admin Template
+ * @version v1.0.10
+ * @link http://coreui.io
+ * Copyright (c) 2018 creativeLabs Łukasz Holeczek
+ * @license MIT
+ -->
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,Angular 2,Angular4,Angular 4,jQuery,CSS,HTML,RWD,Dashboard,React,React.js,Vue,Vue.js">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>CoreUI - Open Source Bootstrap Admin Template</title>
+
+    <!-- pNotify -->
+    <link href="node_modules/pnotify/pnotify.core.css" rel="stylesheet" />
+    <link href="node_modules/pnotify/pnotify.buttons.css" rel="stylesheet" />
+
+    <!-- Main styles for this application -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<!-- BODY options, add following classes to body to change options
+
+  // Header options
+  1. '.header-fixed'					- Fixed Header
+
+  // Sidebar options
+  1. '.sidebar-fixed'					- Fixed Sidebar
+  2. '.sidebar-hidden'				- Hidden Sidebar
+  3. '.sidebar-off-canvas'		- Off Canvas Sidebar
+  4. '.sidebar-minimized'			- Minimized Sidebar (Only icons)
+  5. '.sidebar-compact'			  - Compact Sidebar
+
+  // Aside options
+  1. '.aside-menu-fixed'			- Fixed Aside Menu
+  2. '.aside-menu-hidden'			- Hidden Aside Menu
+  3. '.aside-menu-off-canvas'	- Off Canvas Aside Menu
+
+  // Breadcrumb options
+  1. '.breadcrumb-fixed'			- Fixed Breadcrumb
+
+  // Footer options
+  1. 'footer-fixed'						- Fixed footer
+
+-->
+<body class="header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden" ng-controller="NavbarController">
+    <!-- User Interface -->
+    <ui-view class="app"></ui-view>
+    <!-- Bootstrap and necessary plugins -->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- AngularJS -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <!-- AngularJS plugins -->
+    <script src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <script src="node_modules/angular-breadcrumb/dist/angular-breadcrumb.min.js"></script>
+    <script src="node_modules/angular-loading-bar/build/loading-bar.min.js"></script>
+
+    <script src="node_modules/pnotify/pnotify.core.js"></script>
+    <script src="node_modules/pnotify/pnotify.confirm.js"></script>
+    <script src="node_modules/pnotify/pnotify.buttons.js"></script>
+    <script src="node_modules/pnotify/angular-pnotify.js"></script>
+
+
+    <!-- AngularJS CoreUI App scripts -->
+    <script src="js/app.js"></script>
+    <script src="js/routes.js"></script>
+    <!--<script src="js/demo/routes.js"></script>-->
+    <script src="js/directives.js"></script>
+
+    <!-- service -->
+    <script src="app/services/config.js"></script>
+    <script src="app/services/httpInterceptors.js"></script>
+    <script src="app/services/authService.js"></script>
+
+    <!-- controller -->
+    <script src="app/controllers/common.js"></script>
+    <script src="app/controllers/login.js"></script>
+    <script src="app/controllers/dashboard.js"></script>
+    <!--security routes-->
+    <script src="app/controllers/admin/securities/treasurybills.js"></script>
+    <script src="app/controllers/admin/securities/fgbonds.js"></script>
+    <script src="app/controllers/admin/securities/eurobonds.js"></script>
+    <!--feature routes-->
+    <script src="app/controllers/admin/features/counterparty.js"></script>
+    <script src="app/controllers/admin/features/currency.js"></script>
+    <!--user routes-->
+    <script src="app/controllers/admin/users/createusers.js"></script>
+    <script src="app/controllers/admin/users/viewusers.js"></script>
+    <!--trades eurobond-->
+    <script src="app/controllers/trade/eurobond/setupvolume.js"></script>
+    <script src="app/controllers/trade/eurobond/eurosell.js"></script>
+    <script src="app/controllers/trade/eurobond/eurobuy.js"></script>
+    <!--trades fgn bonds-->
+    <script src="app/controllers/trade/fgnbonds/fgnbuy.js"></script>
+    <script src="app/controllers/trade/fgnbonds/fgnsell.js"></script>
+    <script src="app/controllers/trade/fgnbonds/fgnsetupvolume.js"></script>
+    <!--Treasury Bills-->
+    <script src="app/controllers/trade/treasurybills/tbillsbuy.js"></script>
+    <script src="app/controllers/trade/treasurybills/tbillssell.js"></script>
+    <script src="app/controllers/trade/treasurybills/tbillssetupvolume.js"></script>
+</body>
+</html>
