@@ -165,7 +165,7 @@ angular
           ncyBreadcrumb: {
               label: 'Counter Party',
           },
-          controller: 'CounterPartyController'
+          controller: 'SecurityController'
       })
 
       .state('app.currency', {
@@ -174,7 +174,7 @@ angular
           ncyBreadcrumb: {
               label: 'Currency',
           },
-          controller: 'CurrencyController'
+          controller: 'SecurityController'
         })
 
       .state('app.createuser', {

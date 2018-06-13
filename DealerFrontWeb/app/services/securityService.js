@@ -30,6 +30,36 @@ var securityService = function ($http, $location, authService, baseUrl) {
         return $http.get(serviceBase + "/all");
     }  
 
+    // create and get CounterParty.
+    factory.CreateCounterParty = function (item) {
+        if (!authService.isAuthenticated) {
+            $location.url = "/login";
+        }
+        return $http.post(serviceBase + "/createCounterparty", item);
+    }
+
+    factory.GetCounterparties = function () {
+        if (!authService.isAuthenticated) {
+            $location.url = "/login";
+        }
+        return $http.get(serviceBase + "/counterParties");
+    }
+
+    // create and get Currencies.
+    factory.AddCurrency = function (item) {
+        if (!authService.isAuthenticated) {
+            $location.url = "/login";
+        }
+        return $http.post(serviceBase + "/addcurrency", item);
+    }
+
+    factory.GetCurrencies = function () {
+        if (!authService.isAuthenticated) {
+            $location.url = "/login";
+        }
+        return $http.get(serviceBase + "/currencies");
+    }
+
     return factory;
 }
 

@@ -1,18 +1,64 @@
 ﻿<div class="animated fadeIn">
 
 
-    <div class="row">
+    <div class="row" ng-init="initPage()">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                   Counter Party
+                    Create Counter Party
                 </div>
                 <div class="card-body">
-                    {{message}}
+                    <form class="row container" name="counterparty">
+                        <div class="form-group col-sm-12">
+                            <label for="name" class="col-sm-7 control-label"> <b>Counter Party</b> </label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="name" id="name" ng-model="counterPartyModel.CounterPartyName" required>
+                                <br />
+                                <button class="btn btn-outline-primary" style="width: 150px" ng-click="createCounterParty()" ng-disabled="counterparty.$invalid"><b>Create</b> </button>
+                            </div>
+
+                        </div>
+                    </form>
+                    <br/><br/>
+                    
+                         <div class="">
+                             <p class="card-header">View list of counterparties</p>
+                             <br/>
+                             <table class="table table-condensed table-striped table-hover">
+                                 <thead>
+                                     <tr>
+                                         <th scope="col">#</th>
+                                         <th scope="col"> Name</th>
+                                         <th scope="col">Date Created</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     <tr ng-repeat="items in counterparties">
+                                         <th scope="row">{{$index + 1}}</th>
+                                         <td>{{items.CounterPartyName}}</td>
+                                         <td>{{items.DateCreated | date: 'dd-MMMM-yyyy'}}</td>
+                                     </tr>
+                                     <!--<tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>-->
+                                 </tbody>
+                             </table>
+                         </div>
                 </div>
             </div>
+
+         
+
         </div>
 
-    </div>
-
+</div>
 </div>
