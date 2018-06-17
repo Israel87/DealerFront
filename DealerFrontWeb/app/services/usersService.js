@@ -1,19 +1,20 @@
 ﻿'use strict';
 
-define(['app'], function (app) {
+//define(['app'], function (app) {
+var app = angular.module('app');
 
     var injectParams = ['$http', '$q', 'authService', 'baseUrl'];
 
-    var usersFactory = function ($http, $location, authService, baseUrl) {
+    var userService = function ($http, $location, authService, baseUrl) {
     
-        var serviceBase = baseUrl + 'user/';
+        var serviceBase = baseUrl + 'user';
         var   factory = {};
 
         factory.AddUser = function (item) {
             if (!authService.isAuthenticated) {
                 $location.url = "/login";
             }
-           return $http.post(serviceBase + "/register", item);
+            return $http.post(serviceBase + "/createUser", item);
         }
 
         factory.UpdateUser = function (item) {
@@ -28,7 +29,7 @@ define(['app'], function (app) {
             if (!authService.isAuthenticated) {
                 $location.url = "/login";
             }
-            return $http.get(serviceBase);
+            return $http.get(serviceBase + "/allUsers");
         }
 
         factory.GetUser = function (id) {
@@ -60,12 +61,13 @@ define(['app'], function (app) {
             return $http.get(serviceBase + "/disable/" + id);
         }
 
+
        return factory;
     }
 
 
-    usersFactory.$inject = injectParams;
+    userService.$inject = injectParams;
 
-    app.factory('usersService', usersFactory);
+    app.factory('usersService', userService);
 
-});
+//});

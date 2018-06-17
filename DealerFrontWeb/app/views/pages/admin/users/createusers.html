@@ -5,10 +5,58 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Currency
+                    Create User
                 </div>
                 <div class="card-body">
-                    {{message}}
+                    
+
+                    <form class="row container" name="createUserForm">
+                        <div class="form-group col-sm-12">
+                            <label for="name" class="col-sm-7 control-label"> <b>First Name</b> </label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="FirstName" id="FirstName" ng-model="user.FirstName" required>
+                                <!--<span ng-show="createUserForm.name.$touched && createUserForm.name.$invalid" style="color:orangered">The name is required.</span>-->
+                            </div>
+
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="name" class="col-sm-7 control-label"> <b>Last Name</b> </label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="LastName" id="LastName" ng-model="user.LastName" required>
+                            </div>
+
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="name" class="col-sm-7 control-label"> <b>Gender</b> </label>
+                            <div class="col-sm-5">
+                                <select class="form-control" id="Gender" ng-options="x for x in genderList" ng-model="user.Gender" required></select>
+                            </div>
+
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="name" class="col-sm-7 control-label"> <b>Email</b> </label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="Email" id="Email" ng-model="user.Email" required>
+                            </div>
+
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="name" class="col-sm-7 control-label"> <b>Phone Number</b> </label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="PhoneNumber" id="PhoneNumber" ng-model="user.PhoneNumber" required>
+                            </div>
+
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="name" class="col-sm-7 control-label"><b>Roles</b>  </label>
+                            <div class="col-sm-5">
+
+                                <select class="form-control" id="securitytype" ng-options="x for x in roleList" ng-model="user.Roles" required></select>
+                                <br />
+                                <button class="btn btn-outline-primary" style="width: 150px" ng-click="saveUser()" ng-disabled="createUserForm.$invalid"><b>Create User</b> </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

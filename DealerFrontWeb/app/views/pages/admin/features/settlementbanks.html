@@ -1,0 +1,77 @@
+﻿<div class="animated fadeIn">
+
+
+    <div class="row" ng-init="initPage()">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    Add Settlement Bank
+                </div>
+                <div class="card-body">
+                    <form class="row container" name="settlementBankForm">
+                        <div class="form-group col-sm-12">
+                            <label for="name" class="col-sm-7 control-label"> <b>Bank Name</b> </label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="name" id="name" ng-model="settlementbank.BankName" required>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="name" class="col-sm-7 control-label"> <b>Bank Charge</b> </label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="name" id="name" ng-model="settlementbank.BankCharge" required>
+                                <br />
+                                <button class="btn btn-outline-primary" style="width: 150px" ng-click="saveSettlementBanks()" ng-disabled="settlementBankForm.$invalid"><b>Create</b> </button>
+                            </div>
+                        </div>
+                    </form>
+                    <br /><br />
+
+                    <div class="">
+                        <p class="card-header">View list of Settlement Banks</p>
+                        <br />
+                        <table class="table table-condensed table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col"> Bank Name</th>
+                                    <th scope="col"> Bank Charge</th>
+                                    <th scope="col">Date Created</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="items in settlementbanks">
+                                    <th scope="row">{{$index + 1}}</th>
+                                    <td>{{items.BankName}}</td>
+                                    <td>{{items.BankCharge}}%</td>
+                                    <td>{{items.DateCreated | date: 'dd-MMMM-yyyy'}}</td>
+                                    <td>
+                                        <button class="btn btn-outline-cyan">Edit</button>
+                                        <button class="btn btn-outline-danger">Delete</button>
+                                    </td>
+                                </tr>
+                                <!--<tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>

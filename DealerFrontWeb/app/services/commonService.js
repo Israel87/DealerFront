@@ -1,6 +1,8 @@
 ﻿'use strict';
 
-define(['app'], function (app) {
+//define(['app'], function (app) {
+
+var app = angular.module('app');
 
     var injectParams = ['$http', '$q', 'authService'];
 
@@ -77,4 +79,4 @@ define(['app'], function (app) {
 
     app.factory('commonService', commonService);
 
-});
+//});

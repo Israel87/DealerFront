@@ -175,15 +175,28 @@ angular
               label: 'Currency',
           },
           controller: 'SecurityController'
-        })
+      })
 
+
+      // Settlement Banks
+      .state('app.settlementbank', {
+          url: '/features/settlementbank',
+          templateUrl: 'app/views/pages/admin/features/settlementbanks.html',
+          ncyBreadcrumb: {
+              label: 'SettlementBank',
+          },
+          controller: 'SettlementBankController'
+      })
+
+
+      // Users
       .state('app.createuser', {
           url: '/users/createuser',
           templateUrl: 'app/views/pages/admin/users/createusers.html',
           ncyBreadcrumb: {
               label: 'Create Users',
           },
-          controller: 'CreateUserController'
+          controller: 'UserController'
         })
 
       .state('app.viewusers', {
@@ -192,7 +205,7 @@ angular
           ncyBreadcrumb: {
               label: 'View Users',
           },
-          controller: 'CreateUserController'
+          controller: 'UserController'
       })
 
       // Euro bonds under trades
@@ -273,5 +286,28 @@ angular
               label: 'Treasury Bills Setup Volume',
           },
           controller: 'TbillsVolumeController'
-      })
+        })
+
+    // Route for analysis 
+      .state('app.authorizeTrade', {
+          url: '/reports/authorizeTrade',
+          templateUrl: 'app/views/pages/reports/authorizeTrade.html',
+          ncyBreadcrumb: {
+              label: 'Authorize Trade',
+          },
+          controller: 'TbillsVolumeController'
+        })
+
+      .state('app.tradelist', {
+          url: '/reports/tradelist',
+          templateUrl: 'app/views/pages/reports/tradelist.html',
+          ncyBreadcrumb: {
+              label: 'Trade List',
+          },
+          controller: 'TbillsVolumeController'
+        })
+
+
+
+
 }]);

@@ -34,6 +34,9 @@
                     <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.currency"><i class="fa fa-money"></i> Currency</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.settlementbank"><i class="fa fa-university"></i> Settlement Bank</a>
+                    </li>
                 </ul>
             </li>
 
@@ -109,21 +112,34 @@
                     <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.fgnbuy"><i class="fa fa-key"></i> Change Password</a>
                     </li>
-                    
+
                 </ul>
             </li>
 
 
             <li class="divider"></li>
-           
-            <li class="nav-title">
-                <i class="fa fa-line-chart"></i> &nbsp;&nbsp;<b>REPORTS</b>
-            </li>
 
+
+
+            <li class="nav-title">
+                <i class="fa fa-line-chart"></i> &nbsp;&nbsp;<b>ANALYSIS</b>
+            </li>
+            <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.icons')}">
+                <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.icons')}" href="#"><i class="fa fa-flag-o"></i><b style="color:#e2c833">Reports</b></a>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.tradelist"><i class="fa fa-trademark"></i> View Trades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.authorizeTrade"><i class="fa fa-thumbs-o-up"></i> Authorize Trades</a>
+                    </li>
+                </ul>
+            </li>
+       
             <li class="nav-title">
                 <i class="fa fa-power-off"></i> &nbsp;&nbsp;<b>LOGOUT</b>
             </li>
-
+            
         </ul><br /><br /><br />
     </nav>
 </div>
