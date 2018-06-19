@@ -39,7 +39,7 @@ function SecurityController($scope, authService, $location, $routeParams, securi
 
                 vm.instrumentTypes = result.data;
             })
-            .catch(function(error) {
+            .catch(function (error) {
                 console.log(error)
             });
 

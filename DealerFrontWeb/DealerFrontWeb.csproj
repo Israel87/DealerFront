@@ -81,11 +81,13 @@
     <Content Include="app\controllers\trade\fgnbonds\fgnbuy.js" />
     <Content Include="app\controllers\trade\fgnbonds\fgnsell.js" />
     <Content Include="app\controllers\trade\fgnbonds\fgnsetupvolume.js" />
+    <Content Include="app\controllers\trade\tradeVolumeController.js" />
     <Content Include="app\controllers\trade\treasurybills\tbillsbuy.js" />
     <Content Include="app\controllers\trade\treasurybills\tbillssell.js" />
     <Content Include="app\controllers\trade\treasurybills\tbillssetupvolume.js" />
     <Content Include="app\services\securityService.js" />
     <Content Include="app\services\settlementBankService.js" />
+    <Content Include="app\services\tradeVolumeService.js" />
     <Content Include="app\views\pages\admin\features\settlementbanks.html" />
     <Content Include="app\views\pages\reports\authorizeTrade.html" />
     <Content Include="img\PARTHIAN jo.JPG" />

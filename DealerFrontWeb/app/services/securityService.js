@@ -30,6 +30,20 @@ var securityService = function ($http, $location, authService, baseUrl) {
         return $http.get(serviceBase + "/all");
     }  
 
+    factory.GetSecurityByTypeId = function (id) {
+        if (!authService.isAuthenticated) {
+            $location.url = "/login";
+        }
+        return $http.get(serviceBase + "/" + id);
+    }
+
+    factory.GetSecurityByType = function (id) {
+        if (!authService.isAuthenticated) {
+            $location.url = "/login";
+        }
+        return $http.get(serviceBase + "/all");
+    }
+
     // create and get CounterParty.
     factory.CreateCounterParty = function (item) {
         if (!authService.isAuthenticated) {

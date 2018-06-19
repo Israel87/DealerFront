@@ -8,7 +8,7 @@ var app = angular.module('app');
     var userService = function ($http, $location, authService, baseUrl) {
     
         var serviceBase = baseUrl + 'user';
-        var   factory = {};
+        var factory = {};
 
         factory.AddUser = function (item) {
             if (!authService.isAuthenticated) {

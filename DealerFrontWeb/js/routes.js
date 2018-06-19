@@ -285,7 +285,7 @@ angular
           ncyBreadcrumb: {
               label: 'Treasury Bills Setup Volume',
           },
-          controller: 'TbillsVolumeController'
+          controller: 'VolumeController'
         })
 
     // Route for analysis 
