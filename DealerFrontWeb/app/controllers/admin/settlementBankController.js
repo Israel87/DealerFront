@@ -42,7 +42,8 @@ function SettlementBankController($scope, authService, $location, $routeParams, 
                         type: 'success',
                         text: "Settlement Bank created successfully!"
                     });
-                    initPage();
+                    vm.initPage();
+                    vm.clearSettlementBankForm();
                 }
             },
             function (error) {
@@ -68,5 +69,7 @@ function SettlementBankController($scope, authService, $location, $routeParams, 
 
         );
     }
+
+    
 
 }

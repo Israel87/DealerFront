@@ -31,9 +31,9 @@
                     <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.counterparty"><i class="fa fa-exchange"></i>Counterparty </a>
                     </li>
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.currency"><i class="fa fa-money"></i> Currency</a>
-                    </li>
+                    </li>-->
                     <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.settlementbank"><i class="fa fa-university"></i> Settlement Bank</a>
                     </li>
@@ -60,11 +60,11 @@
             <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.icons')}">
                 <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.icons')}" href="#"><i class="fa fa-money"></i><b style="color: #e2c833">Treasury Bills</b></a>
                 <ul class="nav-dropdown-items">
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.tbillssetupvolume"><i class="fa fa-rss"></i> Setup Volume </a>
-                    </li>
+                    </li>-->
                     <li class="nav-item">
-                        <a class="nav-link" ui-sref-active="active" ui-sref="app.tbillsBuy"><i class="fa fa-credit-card-alt"></i> Create Trade </a>
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.createtrade"><i class="fa fa-credit-card-alt"></i> Create Trade </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.tbillsSell"><i class="icon-star"></i> Trade List</a>
@@ -75,9 +75,9 @@
             <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.icons')}">
                 <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.icons')}" href="#"><i class="fa fa-hashtag"></i><b style="color: #e2c833"> FGN Bonds</b></a>
                 <ul class="nav-dropdown-items">
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.fgnsetupvolume"><i class="fa fa-rss"></i> Setup Volume </a>
-                    </li>
+                    </li>-->
                     <li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.fgnbuy"><i class="fa fa-credit-card-alt"></i> Create Trade</a>
                     </li>
@@ -91,14 +91,14 @@
             <li class="nav-item nav-dropdown" ng-class="{open: $state.includes('app.icons')}">
                 <a class="nav-link nav-dropdown-toggle" ng-class="{active: $state.includes('app.icons')}" href="#"><i class="fa fa-eur"></i><b style="color:#e2c833">Euro Bonds</b> </a>
                 <ul class="nav-dropdown-items">
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a class="nav-link" ui-sref-active="active" ui-sref="app.eurosetupvolume"><i class="fa fa-rss"></i> Setup Volume </a>
+                    </li>-->
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.eurobuy"><i class="fa fa-credit-card-alt"></i> Create Trade</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" ui-sref-active="active" ui-sref="app.eurobuy"><i class="fa fa-credit-card-alt"></i> Buy</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" ui-sref-active="active" ui-sref="app.eurosell"><i class="icon-star"></i> Sell</a>
+                        <a class="nav-link" ui-sref-active="active" ui-sref="app.eurosell"><i class="icon-star"></i> Trade List</a>
                     </li>
                 </ul>
             </li>

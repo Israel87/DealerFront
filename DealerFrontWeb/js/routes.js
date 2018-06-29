@@ -270,13 +270,13 @@ angular
           controller: 'TbillsSellController'
       })
 
-      .state('app.tbillsBuy', {
-          url: '/treasurybills/tbillsbuy',
+      .state('app.createtrade', {
+          url: '/treasurybills/createTrade',
           templateUrl: 'app/views/pages/trades/treasurybills/buy.html',
           ncyBreadcrumb: {
-              label: 'Treasury Bills Buy Trade',
+              label: 'Treasury Bills Trade',
           },
-          controller: 'TbillsBuyController'
+          controller: 'CreateTradeController'
       })
 
       .state('app.tbillssetupvolume', {

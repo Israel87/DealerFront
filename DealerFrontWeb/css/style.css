@@ -76,7 +76,9 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  
+}
 
 html {
   font-family: sans-serif;
@@ -10349,9 +10351,13 @@ base-chart.chart {
 .tab-content {
   margin-top: -1px;
   background: #fff;
-  border: 1px solid #a4b7c1; }
+  /*border: 1px solid #a4b7c1;*/
+
+}
   .tab-content .tab-pane {
-    padding: 1rem; }
+    padding: 1rem;
+
+  }
 
 .card-block .tab-content {
   margin-top: 0;

@@ -16,6 +16,7 @@ function UserController($scope, authService, $location, $routeParams, usersServi
     }
 
     var vm = $scope
+    vm.initPage();
 
     vm.user = {
         FirstName: "",
@@ -43,10 +44,9 @@ function UserController($scope, authService, $location, $routeParams, usersServi
     vm.genderList = ["Male", "Female"];
     vm.roleList = ["Administrator", "User"];
 
-    initPage();
+    
 
-    vm.saveUser = function () {
-        
+    vm.saveUser = function () {      
         vm.user.Gender = commonService.getGenderId(vm.user.Gender);
         console.log(vm.user)
         usersService.AddUser(vm.user).then(
@@ -60,7 +60,7 @@ function UserController($scope, authService, $location, $routeParams, usersServi
                         text: "User created successfully!"
                     });
                     vm.addUserClicked = false;
-                    initPage();
+                    vm.initPage();
                 }
             },
             function (error) {
@@ -71,8 +71,9 @@ function UserController($scope, authService, $location, $routeParams, usersServi
 
     }
 
-    function initPage() {
-        clearUserForm();
+    vm.initPage = function() {
+      //  clearUserForm();
+        
         usersService.GetUsers().then(
             function (result) {
                 console.log(result)

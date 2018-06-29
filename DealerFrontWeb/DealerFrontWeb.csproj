@@ -75,6 +75,7 @@
     <Content Include="app\controllers\admin\users\createusers.js" />
     <Content Include="app\controllers\admin\users\viewusers.js" />
     <Content Include="app\controllers\admin\settlementBankController.js" />
+    <Content Include="app\controllers\trade\createTradeController.js" />
     <Content Include="app\controllers\trade\eurobond\eurobuy.js" />
     <Content Include="app\controllers\trade\eurobond\eurosell.js" />
     <Content Include="app\controllers\trade\eurobond\setupvolume.js" />
@@ -85,11 +86,13 @@
     <Content Include="app\controllers\trade\treasurybills\tbillsbuy.js" />
     <Content Include="app\controllers\trade\treasurybills\tbillssell.js" />
     <Content Include="app\controllers\trade\treasurybills\tbillssetupvolume.js" />
+    <Content Include="app\services\createTradeService.js" />
     <Content Include="app\services\securityService.js" />
     <Content Include="app\services\settlementBankService.js" />
     <Content Include="app\services\tradeVolumeService.js" />
     <Content Include="app\views\pages\admin\features\settlementbanks.html" />
     <Content Include="app\views\pages\reports\authorizeTrade.html" />
+    <Content Include="css\tabcss.css" />
     <Content Include="img\PARTHIAN jo.JPG" />
     <Content Include="app\views\pages\admin\features\counterparty.html" />
     <Content Include="app\views\pages\admin\features\currency.html" />

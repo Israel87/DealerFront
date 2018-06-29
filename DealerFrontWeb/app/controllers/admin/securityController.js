@@ -55,6 +55,7 @@ function SecurityController($scope, authService, $location, $routeParams, securi
             .then(function(result) {
                 console.log(result);
                 vm.counterparties = result.data;
+              
             })
             .catch(function(error) {
                 console.log(error);
@@ -101,6 +102,7 @@ function SecurityController($scope, authService, $location, $routeParams, securi
                     text: "CounterParty created successfully!"
                 });
                 clearCounterParty();
+                vm.initPage(); 
 
             })
             .catch(function(error) {
@@ -109,24 +111,25 @@ function SecurityController($scope, authService, $location, $routeParams, securi
     }
 
     // create currency
-    vm.addCurrency = function () {
-        alert('ETA : 8:15pm');
-        securityService.AddCurrency(vm.currencyModel)
-            .then(function (result) {
-                alert('ETA : gba gbe oshi !!!');
-                pinesNotifications.notify({
-                    title: 'Success!',
-                    type: 'success',
-                    text: "Currency created successfully!"
-                });
-                clearCurrency();
+    //vm.addCurrency = function () {
+    //    alert('ETA : 8:15pm');
+    //    securityService.AddCurrency(vm.currencyModel)
+    //        .then(function (result) {
+    //            alert('ETA : gba gbe oshi !!!');
+    //            pinesNotifications.notify({
+    //                title: 'Success!',
+    //                type: 'success',
+    //                text: "Currency created successfully!"
+    //            });
+    //            vm.initPage();
+    //            clearCurrency();
 
 
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    }
+    //        })
+    //        .catch(function (error) {
+    //            console.log(error);
+    //        });
+    //}
 
     // clear function for create security field.
     function clearCreateSecurityForm() {
@@ -143,10 +146,10 @@ function SecurityController($scope, authService, $location, $routeParams, securi
         }
     }
     // clear function for currency field
-    function clearCurrency() {
-        vm.currencyModel = {
-            CurrencyName: ''
-        }
-    }
+    //function clearCurrency() {
+    //    vm.currencyModel = {
+    //        CurrencyName: ''
+    //    }
+    //}
 
 };

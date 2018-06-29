@@ -1,154 +1,385 @@
 ﻿<div class="animated fadeIn">
 
 
-    <div class="row">
+    <div class="row" ng-init="InitCreateTradePage('Treasury Bills')">
+
+
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                  Create Trade (Buy / Sell).
-
+                    <!--<b>TBills create trade.</b>-->
                 </div>
-                <div class="card-body container">
-                    
-                    <form class="row" name="buyTradeForm">
-                     
-                        <div class="col-lg-5">
-                            <h4 class="pull-left">Buy Trade</h4>
-                            <hr />          <hr />
-                            <div class="form-group">
-                                <label for="name" class="col-sm-3 control-label"><b>Instruments</b>  </label>
-                                <div class="col-sm-9">
+                <div class="card-body">
+                    <div class="row">
+                        <br />
+                        <section class="py-4 container" style="width:100%">
+                            
+                                <div class="row">
+                                    <div class="col-md-12">
 
-                                    <select class="form-control" id="securitytype" ng-options="x for x in roleList" ng-model="user.Roles" required></select>
+                                        <ul id="" class="nav nav-tabs">
+                                            <li class="nav-item"><a href="" data-target="#home1" data-toggle="tab" class="nav-link small text-uppercase">Setup Volume</a></li>
+                                            <li class="nav-item"><a href="" data-target="#profile1" data-toggle="tab" class="nav-link small text-uppercase active">Create Trades</a></li>
+                                            <!--<li class="nav-item"><a href="" data-target="#messages1" data-toggle="tab" class="nav-link small text-uppercase">Trade Lists</a></li>-->
+                                        </ul>
+                                        <br>
+                                        <div id="" class="tab-content">
 
+                                            <div id="home1" class="tab-pane">
+                                                <form name="createTradeVolume">
+                                                    <p> Create volume</p>
+                                                    <br />
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <label for="name" class="col-sm-4 control-label"> Initial Volume </label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" name="initialvolume" id="initialvolume" ng-model="volume.InitialVolume" required>
+                                                                </div>
+                                                            </div><br />
+
+
+                                                            <div class="input-group">
+                                                                <label for="name" class="col-sm-4 control-label"> Trade Date </label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="date" class="form-control" name="tradedate" id="tradedate" ng-model="TradeDate" required ng-change="dateSelected()">
+                                                                </div>
+
+                                                            </div><br />
+
+
+                                                            <div class="input-group">
+                                                                <label for="name" class="col-sm-4 control-label"> Settlement Date </label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" name="settlementdate" id="settlementdate" ng-model="SettlementDate" disabled="disabled">
+                                                                </div>
+
+                                                            </div><br />
+                                                            <div class="input-group">
+                                                                <label for="name" class="col-sm-4 control-label"> Settlement Bank</label>
+                                                                <div class="col-sm-8">
+                                                                    <select class="form-control" id="settlementbank" ng-options="x.BankName for x in getsettlementbanks" ng-model="selectedBankName" required></select>
+
+                                                                </div>
+                                                                <br /><br />
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <label for="name" class="col-sm-4 control-label"> Security </label>
+                                                                <div class="col-sm-8">
+                                                                    <select class="form-control" id="securitytype" ng-options="x.InstrumentName for x in securityList" ng-model="selectedInstrumentName" required></select>
+                                                                </div>
+                                                            </div><br />
+
+
+                                                            <div class="input-group">
+                                                                <label for="name" class="col-sm-4 control-label"> Settlement Type</label>
+                                                                <div class="col-sm-8">
+                                                                    <select class="form-control" id="securitytype" ng-options="x for x in settlementType" ng-model="SettlementType" required ng-change="changeSettlementDate()"></select>
+
+                                                                </div>
+
+                                                            </div><br />
+
+                                                            <div class="input-group">
+                                                                <label for="name" class="col-sm-4 control-label"> TTM </label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" name="LastName" id="LastName" ng-model="Tenor" required>
+                                                                </div>
+                                                            </div>
+                                                            <br />
+                                                            <div class="input-group">
+                                                                <label for="name" class="col-sm-4 control-label">  </label>
+                                                                <div class="col-sm-8">
+
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <br /><br /><br />
+
+                                                    </div>
+                                                    <hr />
+                                                    <button class="btn btn-outline-warning pull-right" ng-click="saveTradeVolume()" style="width:285px" width="90%" ng-disabled="createTradeVolume.$invalid">Save Volume</button>
+                                                </form>
+                                            </div>
+                                            <div id="profile1" class="tab-pane fade active show">
+                                                <div class="">
+                                                   
+                                                    <p class="pull-left">Create trade</p>
+
+                                                    <!--<div class="pull-right">
+                                                        <button type="button" class="btn btn-outline-warning pull-right" data-toggle="modal" data-target="#myModal2" style="width:50px"><i class="fa fa-money"></i></button>
+                                                        <button type="button" class="btn btn-outline-success pull-right" data-toggle="modal" data-target="#myModal3" style="width:50px"><i class="fa fa-credit-card"></i></button>
+                                                    </div>-->
+
+
+                                                    <br />
+
+                                                    <br />
+                                                    <table class="table table-condensed table-hover table-striped table-responsive" width="800">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col"> Security</th>
+                                                                <th scope="col">  Volume</th>
+                                                                <th scope="col"> Settlement Bank</th>
+                                                                <th scope="col"> Volume Bought</th>
+                                                                <th scope="col"> Volume Sold</th>
+                                                                <th scope="col"> Trade Date</th>
+                                                                <th scope="col">Transaction Type</th>
+                                                                <th width="70"> Settlement Date</th>
+                                                                <th scope="col">Tenor</th>
+                                                                <th scope="col">Date created</th>
+                                                                <th scope="col">Buy</th>
+                                                                <th scope="col">Sell</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr ng-repeat="items in gettradevolumes" style="font-size: 12px">
+                                                                <th scope="row">{{$index + 1}}</th>
+                                                                <td>{{items.InstrumentName}}</td>
+                                                                <td>{{items.InitialVolume | currency:'₦' :0 }}</td>
+                                                                <td>{{items.SettlementBankName}}</td>
+                                                                <td>{{items.VolumeBought}}</td>
+                                                                <td>{{items.VolumeSold}}</td>
+                                                                <td>{{items.TradeDate |  date }}</td>
+                                                                <td>{{items.SettlementType}}</td>
+                                                                <td>{{items.SettlementDate}}</td>
+                                                                <td>{{items.Tenor}}</td>
+                                                                <td>{{items.DateCreated | date}}</td>
+
+                                                                <!--<td>
+        <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#myModal" style="width:50px"><i class="fa fa-th-list"></i></button>
+    </td>-->
+                                                                <td>
+                                                                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#myModal2" style="width:70px" ng-click="getVolumeValues(items.InitialVolume, items.InstrumentName, items.Id)"><i class="fa fa-mail-reply"></i></button>
+                                                                </td>
+                                                                <td>
+                                                                    <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#myModal3" style="width:70px"><i class="fa fa-mail-forward"></i></button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+
+                                            </div>
+                                            <!--<div id="messages1" class="tab-pane fade">
+
+                                            </div>-->
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label for="name" class="col-sm-4 control-label"> <b>Trade Date</b> </label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="LastName" id="LastName" ng-model="user.LastName" required>
+                                <!--nav-tabs-->
+
+
+                                <hr />
+
+
+                                <!-- modals-->
+                                <!-- Trigger the modal with a button -->
+                                <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+                                <!-- Modal dialog for View -->
+                                <div id="myModal" class="modal fade" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title pull-left" style="color:  #C70039 "><i class="fa fa-th-list"></i>&nbsp;</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                                            </div>
+                                            <div class="modal-body">
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!--Modal dialog for Buy trade-->
+                                <div id="myModal2" class="modal fade" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+
+                                        <!-- Modal content-->
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title pull-left"><i class="fa fa-money" style="color:#C70039"></i>&nbsp;Enter trade details - Buy</h5>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                                            </div>
+                                            <div class="modal-body">
+                                                <form name="createBuyTradeForm">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="input-group">
+                                                            <label for="name" class="col-sm-3 control-label"> Security</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" name="LastName" id="LastName" ng-model="securityName" disabled="disabled">
+
+                                                            </div>
+                                                        </div><br />
+                                                        <div class="input-group">
+                                                            <label for="name" class="col-sm-4 control-label"> Rate </label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" name="LastName" id="LastName" ng-model="buytrade.BuyRate" required>
+                                                            </div>
+                                                        </div><br />
+                                                        <div class="input-group">
+                                                            <label class="col-sm-4 control-label">
+                                                                Client Settlement Bank <!--<input type="checkbox" id="sellclCounter" ng-click="sellCounterpartyChoice()">-->
+                                                            </label>
+
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" name="sellclCounterparty" id="sellclCounterparty" ng-model="buytrade.BuyClientSettlementBank" style="visibility:visible">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="input-group">
+                                                            <label for="name" class="col-sm-3 control-label"> Size</label>
+                                                            <div class="col-sm-9">
+                                                                <input type="text" class="form-control" name="LastName" id="LastName" ng-model="volumeFigure" disabled="disabled">
+
+                                                            </div>
+                                                        </div><br />
+                                                        <div class="input-group">
+                                                            <label for="name" class="col-sm-4 control-label"> Volume  </label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" name="LastName" id="LastName" ng-model="buytrade.BuyVolume" required>
+                                                            </div>
+                                                        </div><br />
+                                                        <div class="input-group">
+                                                            <label for="name" class="col-sm-4 control-label"> Default Counterparty </label>
+                                                            <div class="col-sm-8">
+                                                                <select class="form-control" id="selldefCounterparty" ng-options="x.CounterPartyName for x in getcounterparties" ng-model="selectedCounterPartyName" style="visibility:visible"></select>
+                                                            </div>
+                                                        </div>
+                                                        <br />
+                                                        <label ng-model="buytrade.TradeVolumeId" hidden></label>
+                                                    </div>
+
+
+                                                </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <div style="text-align:left">
+                                                    Apply charge <input type="checkbox" id="buyapplycharge" value="true" ng-model="buytrade.BuyApplyCharge">
+                                                </div>
+                                                <button class="btn btn-outline-warning pull-right" style="width:200px" ng-click="createBuyTrade()" ng-disabled="createBuyTradeForm.$invalid"> Buy Trade</button>
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!--Modal dialog for Sell-->
+                                <div id="myModal3" class="modal fade" role="dialog">
+                                    <div class="modal-dialog modal-lg">
+                                        <form name="createSellTradeForm">
+                                            <!-- Modal content-->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title pull-left"><i class="fa fa-credit-card" style="color: #C70039"></i>&nbsp; Enter trade details - Sell</h5>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <label for="name" class="col-sm-3 control-label">Security </label>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control" name="securityName" id="securityName" ng-model="securityName" disabled="disabled">
+                                                                </div>
+                                                            </div><br />
+                                                            <div class="input-group">
+                                                                <label for="name" class="col-sm-4 control-label"> Rate </label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" name="Tenor" id="Tenor" ng-model="selltrade.SellRate" required>
+                                                                </div>
+                                                            </div><br />
+                                                            <div class="input-group">
+                                                                <label class="col-sm-4 control-label">
+                                                                    Client Settlement Bank <!--<input type="checkbox" id="clCounter" ng-click="chooseCounterparty()">-->
+                                                                </label>
+
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" name="clCounterparty" id="clCounterparty" ng-model="selltrade.SellClientSettlementBank" style="visibility:visible">
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                            <div class="input-group">
+                                                                <label for="name" class="col-sm-3 control-label"> Size</label>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control" name="LastName" id="LastName" ng-model="volumeFigure" disabled="disabled">
+
+                                                                </div>
+                                                            </div><br />
+                                                            <div class="input-group">
+                                                                <label for="name" class="col-sm-4 control-label"> Volume </label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" name="LastName" id="LastName" ng-model="selltrade.SellVolume" required>
+                                                                </div>
+                                                            </div><br />
+
+                                                            <div class="input-group">
+                                                                <label class="col-sm-4 control-label">
+                                                                    Default Counterparty
+                                                                </label>
+
+                                                                <div class="col-sm-8">
+                                                                    <select class="form-control" id="selldefCounterparty" ng-options="x.CounterPartyName for x in getcounterparties" ng-model="selectedCounterPartyName" style="visibility:visible"></select>
+
+
+                                                                </div>
+                                                            </div>
+                                                            <br />
+                                                            <label ng-model="tradeVolumeId" hidden></label>
+
+                                                        </div>
+
+
+                                                    </div>
+                                       
+                                    </div>
+                                            <div class="modal-footer">
+                                                <div style="text-align:left">
+                                                    Apply charge <input type="checkbox" id="sellapplycharge" ng-model="selltrade.SellApplyCharge">
+                                                </div>
+                                                <button class="btn btn-outline-success pull-right" style="width:200px" ng-click="createSellTrade()" ng-disabled="createSellTradeForm.$invalid"> Sell Trade</button>
+                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    </div>
                                 </div>
 
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-sm-4 control-label"> <b>Settlement Type</b> </label>
-                                <div class="col-sm-8">
-                                    <select class="form-control" id="Gender" ng-options="x for x in genderList" ng-model="user.Gender" required></select>
-                                </div>
 
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-sm-4 control-label"> <b>Settlement Date</b> </label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="Email" id="Email" ng-model="user.Emails" required>
-                                </div>
+                          
+                        </section><br /><br />
+                    </div>
 
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-sm-4 control-label"> <b>TTM</b> </label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="PhoneNumber" id="PhoneNumber" ng-model="user.PhoneNumber" required>
-                                </div>
-
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-sm-4 control-label"> <b>CounterParty</b> </label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="PhoneNumber" id="PhoneNumber" ng-model="user.PhoneNumber" required>
-                                </div>
-
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-sm-4 control-label"> <b> Rate</b> </label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="PhoneNumber" id="PhoneNumber" ng-model="user.PhoneNumber" required>
-                                </div>
-
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-sm-4 control-label"><b>Settlement Bank</b>  </label>
-                                <div class="col-sm-8">
-
-                                    <select class="form-control" id="securitytype" ng-options="x for x in roleList" ng-model="user.Roles" required></select>
-                                    <br />
-                                    <button class="btn btn-outline-primary" style="width: 150px" ng-click="saveUser()" ng-disabled="buyTradeForm.$invalid"><b>Trade (Buy)</b> </button>
-                                </div>
-                            </div>
-                        </div>
-                       <div class="col-sm-2"></div>
-                        <div class="col-lg-5">
-
-                            <h4 class="pull-right">Sell Trade</h4>
-                            <hr />          <hr />
-                            <div class="form-group">
-
-                                <label for="name" class="col-sm-3 control-label"><b>Instruments</b>  </label>
-                                <div class="col-sm-9">
-
-                                    <select class="form-control" id="securitytype" ng-options="x for x in roleList" ng-model="user.Roles" required></select>
-
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="name" class="col-sm-4 control-label"> <b>Trade Date</b> </label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="LastName" id="LastName" ng-model="user.LastName" required>
-                                </div>
-
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-sm-4 control-label"> <b>Settlement Type</b> </label>
-                                <div class="col-sm-8">
-                                    <select class="form-control" id="Gender" ng-options="x for x in genderList" ng-model="user.Gender" required></select>
-                                </div>
-
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-sm-4 control-label"> <b>Settlement Date</b> </label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="Email" id="Email" ng-model="user.Emails" required>
-                                </div>
-
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-sm-4 control-label"> <b>TTM</b> </label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="PhoneNumber" id="PhoneNumber" ng-model="user.PhoneNumber" required>
-                                </div>
-
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-sm-4 control-label"> <b>CounterParty</b> </label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="PhoneNumber" id="PhoneNumber" ng-model="user.PhoneNumber" required>
-                                </div>
-
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-sm-4 control-label"> <b> Rate</b> </label>
-                                <div class="col-sm-8">
-                                    <input type="text" class="form-control" name="PhoneNumber" id="PhoneNumber" ng-model="user.PhoneNumber" required>
-                                </div>
-
-                            </div>
-                            <div class="form-group">
-                                <label for="name" class="col-sm-4 control-label"><b>Settlement Bank</b>  </label>
-                                <div class="col-sm-8">
-
-                                    <select class="form-control" id="securitytype" ng-options="x for x in roleList" ng-model="user.Roles" required></select>
-                                    <br />
-                                    <button class="btn btn-outline-primary" style="width: 150px" ng-click="saveUser()" ng-disabled="buyTradeForm.$invalid"><b>Trade (Sell)</b> </button>
-                                </div>
-                            </div>
-                        </div>
-            
-                 
-                    </form>
                 </div>
             </div>
         </div>
+
+
 
     </div>
 

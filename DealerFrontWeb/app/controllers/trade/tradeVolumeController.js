@@ -11,13 +11,13 @@ function VolumeController($scope, authService, $location, $routeParams, tradeVol
         return;
     }
 
-    var vm = $scope
-    vm.InstrumentType = 1,
-    vm.volume = {
-        InstrumentName: "",
-        InitialVolume: ""
-    };
+    var vm = $scope;
+    //vm.InstrumentType = 1,
+        
+
     vm.selectedInstrumentName = {};
+    
+
     
 
     var clearVolumeForm = function () {
@@ -46,7 +46,7 @@ function VolumeController($scope, authService, $location, $routeParams, tradeVol
         securityService.GetSecurityByTypeId(typeId).then(          
             function (result) {
                 console.log(result)
-                if (result.statusText == "OK") {
+                if (result.statusText === "OK") {
                     vm.securityList = result.data;
                     console.log(vm.securityList);
                     //var lists = result.data.length;
@@ -73,7 +73,7 @@ function VolumeController($scope, authService, $location, $routeParams, tradeVol
     }
 
     // Set trade volume.
-    vm.saveTradeVolume = function () {;
+    vm.saveTradeVolume = function () {
         console.log(vm.volume);
         console.log(vm.InstrumentType);
         vm.volume.InstrumentName = vm.selectedInstrumentName.InstrumentName;
@@ -82,13 +82,13 @@ function VolumeController($scope, authService, $location, $routeParams, tradeVol
             function (result) {
                 
                 console.log(result)
-                if (result.statusText == "OK") {
+                if (result.statusText === "OK") {
                     pinesNotifications.notify({
                         title: 'Success!',
                         type: 'success',
                         text: "Volume created successfully!"
                     });
-                    initPage();
+                    vm.initSetupVolumePage();
                     clearVolumeForm();
                 }
             },
