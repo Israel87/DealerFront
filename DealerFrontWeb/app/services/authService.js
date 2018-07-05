@@ -122,9 +122,9 @@ var authFactory = function ($http, $location, $rootScope, baseUrl, $q, accessTok
         return $http.get(serviceBase + "userinrole/" + role);
     }
 
-    factory.LogUserIn = function (response, email, count) {
+    factory.LogUserIn = function (response) {
         console.log("got here in auth service")
-        setTokenDefault(response, email, count)
+        setTokenDefault(response)
     }
 
 

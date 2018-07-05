@@ -1,10 +1,10 @@
 ﻿angular
-    .module('app')
+    .module('app',)
     .controller('CreateTradeController', CreateTradeController);
 
-CreateTradeController.$inject = ['$scope', 'authService', '$location', '$routeParams', 'tradeVolumeService', 'securityService', 'settlementbankService','createTradeService','pinesNotifications'];
+CreateTradeController.$inject = ['$scope', 'authService', '$location', '$routeParams', 'tradeVolumeService', 'securityService', 'settlementbankService', 'createTradeService', '$timeout', '$window'];
 
-function CreateTradeController($scope, authService, $location, $routeParams, tradeVolumeService, securityService, settlementbankService, createTradeService, pinesNotifications) {
+function CreateTradeController($scope, authService, $location, $routeParams, tradeVolumeService, securityService, settlementbankService, createTradeService, pinesNotifications, DTOptionsBuilder, $timeout, $window) {
 
     if (!authService.user.isAuthenticated) {
         $location.path("/login");
@@ -13,9 +13,18 @@ function CreateTradeController($scope, authService, $location, $routeParams, tra
 
     var vm = $scope;
 
+
+  
+
+
+    // maturity date 
+    vm.MaturityDate = "";
+    vm.Timetomature = "";
+
     vm.volume = {
         InitialVolume: "",
         InstrumentName: "",
+
         TradeDate: "",
         SettlementType: "",
         SettlementDate: "",
@@ -184,7 +193,10 @@ function CreateTradeController($scope, authService, $location, $routeParams, tra
             }
         }
 
+        // get excel list for trades
 
+
+    
         //vm.selectedInstrumentName = {};
         vm.InitCreateTradePage = function (type) {
 
@@ -202,6 +214,45 @@ function CreateTradeController($scope, authService, $location, $routeParams, tra
                     console.log(error);
                 }
             );
+   
+                $('#dtTable').DataTable({
+                    "dom": 'Bfrtip',
+                    "buttons": [
+                        {
+                            extend: 'excel',
+                            text: 'Download Excel'
+                        },
+                    ],
+                    "paging": true,
+                    "ordering": true,
+                    "info": false,
+                    "buttons": true,
+                });
+
+            
+
+            // for datatable display
+           
+             
+            //vm.dataDisplay = DTOptionsBuilder.newOptions()
+            //    .withDisplayLength(5)
+            //    .withOption('bLengthChange', false);
+    
+
+            // process the list of trades by type.
+
+            createTradeService.GetTBillsByType(typeId)
+                .then(function (result) {
+                    console.log(result)
+                    if (result.statusText == "OK") {
+                        vm.tradelist = result.data;
+                        console.log(vm.tradelist);
+                    }
+                },
+                function (error) {
+                    console.log(error);
+                }
+            );
 
             tradeVolumeService.GetVolumes()
                 .then(function (result) {
@@ -210,6 +261,7 @@ function CreateTradeController($scope, authService, $location, $routeParams, tra
 
                 });
 
+
             // get counterparties to display
             securityService.GetCounterparties()
                 .then(function (result) {
@@ -217,21 +269,33 @@ function CreateTradeController($scope, authService, $location, $routeParams, tra
                     vm.getcounterparties = result.data;
                 });
 
-            // get settlementbanks to display.
+            // get settlementbanks to display
             settlementbankService.GetSettlementBanks()
                 .then(function (result) {
                     console.log(result);
                     vm.getsettlementbanks = result.data;
                 });
 
+            // get list of trades by volume 
+            createTradeService.GetTBillsByVolume()
+                .then(function (result) {
+                    console.log(result);
+                    vm.tradesByVolume = result.data; 
+                    vm.tradesByVolumeDataTableFailed = result.data; 
+                    vm.exportTradeExcel = result.data;
+                });
+
+            
             // get the list of settlement types
             vm.transactionType = ["0", "1", "2", "3", "4", "5", "6", "7"];
 
         }
 
+       
         vm.volumeFigure;
         vm.tradeVolumeId;
         vm.securityName;
+       
         // get the values
         vm.getVolumeValues = function (x, y, z) {
             console.log(x, y, z);
@@ -239,7 +303,12 @@ function CreateTradeController($scope, authService, $location, $routeParams, tra
             vm.securityName = y;
             vm.tradeVolumeId = z;
 
-        }
+    }
+
+    // get the values for trade to display 
+    vm.getSummaryValues = function () {
+
+    }
 
 
         // for setting the date
@@ -267,6 +336,8 @@ function CreateTradeController($scope, authService, $location, $routeParams, tra
             }
         }
 
+            var securityDate;
+            var ttm;
         // on click function to change the date for settlement date.
 
         vm.changeSettlementDate = function () {
@@ -280,6 +351,7 @@ function CreateTradeController($scope, authService, $location, $routeParams, tra
                 clearSetDate();
 
             }
+
 
             //set min , max AND end date input text
             //vm.minDate = moment(new Date()).format("YYYY-MM-DD")
@@ -309,6 +381,20 @@ function CreateTradeController($scope, authService, $location, $routeParams, tra
             console.log(generateSettlementDate);
             generateSettlementDate = moment(generateSettlementDate).format('LL');
             vm.SettlementDate = generateSettlementDate;
+
+            // get the time to mature date(ttm)
+           // securityDate = new Date(vm.MaturityDate);vm.selectedInstrumentName.InstrumentName
+            securityDate = new Date(vm.selectedInstrumentName.InstrumentName);
+            var _settleDate = new Date(generateSettlementDate);
+            console.log(_settleDate)
+            console.log(securityDate)
+            ttm = (securityDate - _settleDate) / (1000 * 60 * 60 * 24);
+            vm.Timetomature = ttm;
+
+            //convertToDate = new Date(ttm);
+            console.log(ttm);
+            console.log(vm.Timetomature);
+
         }
 
 
@@ -353,7 +439,7 @@ function CreateTradeController($scope, authService, $location, $routeParams, tra
             vm.volume.BankCharge = vm.selectedBankName.BankCharge;
             vm.volume.InstrumentType = vm.selectedInstrumentName.InstrumentType.Name;
             vm.volume.TradeDate = vm.TradeDate;
-            vm.volume.Tenor = vm.Tenor;
+            vm.volume.Tenor = vm.Timetomature;
 
             tradeVolumeService.CreateVolume(vm.volume).then(
                 function (result) {

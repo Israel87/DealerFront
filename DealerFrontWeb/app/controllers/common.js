@@ -40,7 +40,9 @@ function NavbarController ($scope, $location, config, $q, baseUrl, $http, authSe
             redirectToLogin();
         }
     }
-    
+
+    vm.initPage();
+
     function redirectToLogin() {
         localStorage.setItem("activeTab_mainmenu", 1)
         $location.path("/login");

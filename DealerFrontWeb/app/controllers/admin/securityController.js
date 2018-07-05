@@ -70,9 +70,13 @@ function SecurityController($scope, authService, $location, $routeParams, securi
                 console.log(error);
             })
     }
-
+    vm.selectedMaturitydate;
     vm.createSecurity = function () {
+        
+        var d = new Date(vm.selectedMaturitydate);
 
+        vm.securityModel.InstrumentName = d.getDate() + "/" + (d.getMonth()+1) +"/"+d.getFullYear();
+        console.log(vm.securityModel)
         securityService.CreateSecurity(vm.securityModel)
             .then(function (result) {
 

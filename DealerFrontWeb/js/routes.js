@@ -261,29 +261,29 @@ angular
       })
 
     // Treasury Bills under trades.
-      .state('app.tbillsSell', {
-          url: '/treasurybills/tbillsSell',
-          templateUrl: 'app/views/pages/trades/treasurybills/sell.html',
+      .state('app.tbillstrades', {
+          url: '/treasurybills/tbillstrades',
+          templateUrl: 'app/views/pages/trades/treasurybills/tradelist.html',
           ncyBreadcrumb: {
-              label: 'Treasury Bills Sell Trade',
+              label: 'Treasury Bills Trades',
           },
-          controller: 'TbillsSellController'
+          controller: 'CreateTradeController'
       })
 
       .state('app.createtrade', {
           url: '/treasurybills/createTrade',
           templateUrl: 'app/views/pages/trades/treasurybills/buy.html',
           ncyBreadcrumb: {
-              label: 'Treasury Bills Trade',
+              label: 'Treasury Bills Trades',
           },
           controller: 'CreateTradeController'
       })
 
-      .state('app.tbillssetupvolume', {
-          url: '/treasurybills/tbillsSetupvolume',
-          templateUrl: 'app/views/pages/trades/treasurybills/setupvolume.html',
+      .state('app.tbillsvolumes', {
+          url: '/treasurybills/tbillsvolumes',
+          templateUrl: 'app/views/pages/trades/treasurybills/volumelist.html',
           ncyBreadcrumb: {
-              label: 'Treasury Bills Setup Volume',
+              label: 'Treasury Bills Volumes',
           },
           controller: 'VolumeController'
         })

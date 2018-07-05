@@ -92,6 +92,11 @@
     <Content Include="app\services\tradeVolumeService.js" />
     <Content Include="app\views\pages\admin\features\settlementbanks.html" />
     <Content Include="app\views\pages\reports\authorizeTrade.html" />
+    <Content Include="css\buttons.css" />
+    <Content Include="css\buttons.dataTables.min.css" />
+    <Content Include="css\dataTables.bootstrap.min.css" />
+    <Content Include="css\datatables.min.css" />
+    <Content Include="css\jquery.dataTables.min.css" />
     <Content Include="css\tabcss.css" />
     <Content Include="img\PARTHIAN jo.JPG" />
     <Content Include="app\views\pages\admin\features\counterparty.html" />
@@ -107,12 +112,30 @@
     <Content Include="app\views\pages\trades\fgbonds\sell.html" />
     <Content Include="app\views\pages\trades\fgbonds\setupvolume.html" />
     <Content Include="app\views\pages\trades\treasurybills\buy.html" />
-    <Content Include="app\views\pages\trades\treasurybills\sell.html" />
-    <Content Include="app\views\pages\trades\treasurybills\setupvolume.html" />
+    <Content Include="app\views\pages\trades\treasurybills\tradelist.html" />
+    <Content Include="app\views\pages\trades\treasurybills\volumelist.html" />
     <Content Include="img\parthianlogo.png" />
     <Content Include="img\parthianlogo2.png" />
+    <Content Include="js\angular-datatable.js" />
+    <Content Include="js\angular-datatables.js" />
+    <Content Include="js\buttons.flash.min.js" />
+    <Content Include="js\buttons.html5.min.js" />
+    <Content Include="js\buttons.print.min.js" />
+    <Content Include="js\dataTables.bootstrap.min.js" />
+    <Content Include="js\dataTables.buttons.min.js" />
+    <Content Include="js\datatables.min.js" />
+    <Content Include="js\filesaver.js" />
+    <Content Include="js\jquery-1.11.1.min.js" />
+    <Content Include="js\jquery.dataTables.min.js" />
+    <Content Include="js\json-export-excel.js" />
+    <Content Include="js\jszip.min.js" />
+    <Content Include="js\pdfmake.min.js" />
+    <Content Include="js\smart-table.js" />
+    <Content Include="js\tables.js" />
+    <Content Include="js\vfs_fonts.js" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
+    <Content Include="js\pdfmake.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

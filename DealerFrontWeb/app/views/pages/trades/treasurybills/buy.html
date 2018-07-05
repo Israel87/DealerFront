@@ -38,7 +38,6 @@
                                                                 </div>
                                                             </div><br />
 
-
                                                             <div class="input-group">
                                                                 <label for="name" class="col-sm-4 control-label"> Trade Date </label>
                                                                 <div class="col-sm-8">
@@ -46,34 +45,6 @@
                                                                 </div>
 
                                                             </div><br />
-
-
-                                                            <div class="input-group">
-                                                                <label for="name" class="col-sm-4 control-label"> Settlement Date </label>
-                                                                <div class="col-sm-8">
-                                                                    <input type="text" class="form-control" name="settlementdate" id="settlementdate" ng-model="SettlementDate" disabled="disabled">
-                                                                </div>
-
-                                                            </div><br />
-                                                            <div class="input-group">
-                                                                <label for="name" class="col-sm-4 control-label"> Settlement Bank</label>
-                                                                <div class="col-sm-8">
-                                                                    <select class="form-control" id="settlementbank" ng-options="x.BankName for x in getsettlementbanks" ng-model="selectedBankName" required></select>
-
-                                                                </div>
-                                                                <br /><br />
-                                                            </div>
-
-
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <div class="input-group">
-                                                                <label for="name" class="col-sm-4 control-label"> Security </label>
-                                                                <div class="col-sm-8">
-                                                                    <select class="form-control" id="securitytype" ng-options="x.InstrumentName for x in securityList" ng-model="selectedInstrumentName" required></select>
-                                                                </div>
-                                                            </div><br />
-
 
                                                             <div class="input-group">
                                                                 <label for="name" class="col-sm-4 control-label"> Settlement Type</label>
@@ -85,9 +56,45 @@
                                                             </div><br />
 
                                                             <div class="input-group">
+                                                                <label for="name" class="col-sm-4 control-label"> Settlement Bank</label>
+                                                                <div class="col-sm-8">
+                                                                    <select class="form-control" id="settlementbank" ng-options="x.BankName for x in getsettlementbanks" ng-model="selectedBankName" required></select>
+
+                                                                </div>
+                                                                <br /><br />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-6">
+
+
+
+
+                                                            <!--<div class="input-group">
+        <label for="name" class="col-sm-4 control-label"> Maturity Date </label>
+        <div class="col-sm-8">
+            <input type="date" class="form-control" name="settlementdate" id="settlementdate" ng-model="MaturityDate">
+        </div>
+
+    </div><br />-->
+                                                            <div class="input-group">
+                                                                <label for="name" class="col-sm-4 control-label"> Security </label>
+                                                                <div class="col-sm-8">
+                                                                    <select class="form-control" id="securitytype" ng-options="x.InstrumentName | date: 'dd/MM/yyyy' for x  in securityList" ng-model="selectedInstrumentName" required></select>
+                                                                </div>
+                                                            </div><br />
+
+                                                            <div class="input-group">
+                                                                <label for="name" class="col-sm-4 control-label"> Settlement Date </label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" name="settlementdate" id="settlementdate" ng-model="SettlementDate" disabled="disabled" ng-change="ttm()">
+                                                                </div>
+
+                                                            </div><br />
+
+                                                            <div class="input-group">
                                                                 <label for="name" class="col-sm-4 control-label"> TTM </label>
                                                                 <div class="col-sm-8">
-                                                                    <input type="text" class="form-control" name="LastName" id="LastName" ng-model="Tenor" required>
+                                                                    <input type="text" class="form-control" name="Tenor" id="Tenor" ng-model="Timetomature" disabled="disabled">
                                                                 </div>
                                                             </div>
                                                             <br />
@@ -214,7 +221,7 @@
                                         <!-- Modal content-->
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title pull-left"><i class="fa fa-money" style="color:#C70039"></i>&nbsp;Enter trade details - Buy</h5>
+                                                <h5 class="modal-title pull-left"><i class="fa fa-mail-reply" style="color:#C70039"></i>&nbsp;Enter trade details - Buy</h5>
                                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                                             </div>
@@ -255,18 +262,19 @@
                                                             </div>
                                                         </div><br />
                                                         <div class="input-group">
-                                                            <label for="name" class="col-sm-4 control-label"> Volume  </label>
-                                                            <div class="col-sm-8">
-                                                                <input type="text" class="form-control" name="LastName" id="LastName" ng-model="buytrade.BuyVolume" required>
-                                                            </div>
-                                                        </div><br />
-                                                        <div class="input-group">
-                                                            <label for="name" class="col-sm-4 control-label"> Default Counterparty </label>
+                                                            <label for="name" class="col-sm-4 control-label"> Buyer </label>
                                                             <div class="col-sm-8">
                                                                 <select class="form-control" id="selldefCounterparty" ng-options="x.CounterPartyName for x in getcounterparties" ng-model="selectedCounterPartyName" style="visibility:visible"></select>
                                                             </div>
                                                         </div>
                                                         <br />
+                                                        <div class="input-group">
+                                                            <label for="name" class="col-sm-4 control-label"> Volume  </label>
+                                                            <div class="col-sm-8">
+                                                                <input type="text" class="form-control" name="LastName" id="LastName" ng-model="buytrade.BuyVolume" required>
+                                                            </div>
+                                                        </div><br />
+
                                                         <label ng-model="buytrade.TradeVolumeId" hidden></label>
                                                     </div>
 
@@ -292,7 +300,7 @@
                                             <!-- Modal content-->
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title pull-left"><i class="fa fa-credit-card" style="color: #C70039"></i>&nbsp; Enter trade details - Sell</h5>
+                                                    <h5 class="modal-title pull-left"><i class="fa fa-mail-forward" style="color: #C70039"></i>&nbsp; Enter trade details - Sell</h5>
                                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                                                 </div>
@@ -332,15 +340,8 @@
                                                                 </div>
                                                             </div><br />
                                                             <div class="input-group">
-                                                                <label for="name" class="col-sm-4 control-label"> Volume </label>
-                                                                <div class="col-sm-8">
-                                                                    <input type="text" class="form-control" name="LastName" id="LastName" ng-model="selltrade.SellVolume" required>
-                                                                </div>
-                                                            </div><br />
-
-                                                            <div class="input-group">
                                                                 <label class="col-sm-4 control-label">
-                                                                    Default Counterparty
+                                                                    Seller
                                                                 </label>
 
                                                                 <div class="col-sm-8">
@@ -350,6 +351,13 @@
                                                                 </div>
                                                             </div>
                                                             <br />
+                                                            <div class="input-group">
+                                                                <label for="name" class="col-sm-4 control-label"> Volume </label>
+                                                                <div class="col-sm-8">
+                                                                    <input type="text" class="form-control" name="LastName" id="LastName" ng-model="selltrade.SellVolume" required>
+                                                                </div>
+                                                            </div><br />
+
                                                             <label ng-model="tradeVolumeId" hidden></label>
 
                                                         </div>

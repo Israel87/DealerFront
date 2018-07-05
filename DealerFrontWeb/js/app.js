@@ -17,7 +17,10 @@ angular
   'ngRoute',
   'oc.lazyLoad',
   'ncy-angular-breadcrumb',
-  'angular-loading-bar'
+  'angular-loading-bar',
+    'smart-table',
+    'datatables',
+  'ngJsonExportExcel'
 ])
 .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
   cfpLoadingBarProvider.includeSpinner = false;

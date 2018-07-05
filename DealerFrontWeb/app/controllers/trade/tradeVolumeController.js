@@ -72,6 +72,40 @@ function VolumeController($scope, authService, $location, $routeParams, tradeVol
 
     }
 
+    // get the volume values for summary modal
+    vm.InitVolume;
+    vm.InstrName;
+    vm.SetlBankChg;
+    vm.SetlBankName;
+    vm.SetlType;
+    vm.Tenor;
+    vm.TotalCashFlow;
+    vm.TotalCashFlowFMDQ;
+    vm.TotalCharge;
+    vm.VolumeBought;
+    vm.VolumeSold;
+    vm.tradedate;
+    vm.settlementdate;
+
+
+    vm.getSummaryValues = function (a,b,c,d,e,f,g,h,i,j,k, l,m) {
+        vm.InitVolume = a;
+        console.log(vm.InitVolume);
+        vm.InstrName = b;
+        vm.SetlBankChg = c;
+        vm.SetlBankName = d;
+        vm.SetlType = e;
+        vm.Tenor = f;
+        vm.TotalCashFlow = g;
+        vm.TotalCashFlowFMDQ = h;
+        vm.TotalCharge = i;
+        vm.VolumeBought = j;
+        vm.VolumeSold = k;
+        vm.tradedate = l;
+        vm.settlementdate = m;
+
+
+    }
     // Set trade volume.
     vm.saveTradeVolume = function () {
         console.log(vm.volume);

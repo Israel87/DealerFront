@@ -1,0 +1,180 @@
+﻿<div class="animated fadeIn">
+
+
+    <div class="row" ng-init="initSetupVolumePage('Treasury Bills')">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    
+                </div>
+                <div class="card-body">
+
+                    <div class="">
+                        <p class="card-header">list of created volumes</p>
+                        <br />
+                        <table class="table table-condensed table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col"> Initial Volume</th>
+                                    <th scope="col">  Instrument</th>
+                                    <!--<th scope="col"> Volume Bought</th>-->
+                                    <th scope="col"> Bank Charge</th>
+                                    <th scope="col"> Bank Name</th>
+                                    <!--<th scope="col"> Updated by</th>-->
+                                    <th scope="col">Date Created</th>
+                                    <th scope="col">Action</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="items in gettradevolumes">
+                                    <th scope="row">{{$index + 1}}</th>
+                                    <td>{{items.InitialVolume | currency:'₦' :0 }}</td>
+                                    <td>{{items.InstrumentName}}</td>
+
+                                    <td>{{items.SettlementBankCharge }}</td>
+                                    <td>{{items.SettlementBankName}}</td>
+                                    <td>{{items.DateCreated | date: 'dd-MMMM-yyyy'}}</td>
+                                    <td>
+                                        <button class="btn btn-outline-danger" data-toggle="modal" data-target=".bd-example-modal-lg" ng-click="getSummaryValues(items.InitialVolume, 
+                                                items.InstrumentName,items.SettlementBankCharge,items.SettlementBankName,
+                                                items.SettlementType, items.Tenor, items.TotalCashFlow, items.TotalCashwithFMDQ,
+                                                items.TotalCharge, items.VolumeBought, items.VolumeSold, items.TradeDate, items.SettlementDate)">View more</button>
+                                        <!--<button class="btn btn-outline-danger">Delete</button>-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!--modal view-->
+
+                </div>
+            </div>
+        </div>
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg"><br/><br/>
+                <div class="modal-content container">
+                 
+                    <h5 class="card-header">Trade Volume Details for&nbsp; {{InstrName}}</h5>
+
+                 
+                    <div class="row">
+                        
+                        <div class="col-lg-6">
+                            <br />   <br />
+                            <div class="input-group col-sm-12">
+                                <label for="name" class="col-sm-7 control-label"> Initial Volume </label>
+                                <div class="col-sm-5">
+                                    <!--<p ng-model="InitVolume"></p>-->
+                                    <p>{{InitVolume | currency:'₦' :2}}</p>
+                                </div>
+
+                            </div>
+                            <div class="input-group col-sm-12">
+                                <label for="name" class="col-sm-7 control-label"> Instrument </label>
+                                <div class="col-sm-5">
+                                    <p> {{InstrName}}</p>
+                                </div>
+                                
+                            </div>
+                            <div class="input-group col-sm-12">
+                                <label for="name" class="col-sm-7 control-label"> Settlement Bank Charge </label>
+                                <div class="col-sm-5">
+                                    <p>{{SetlBankChg}}%</p>
+                                </div>
+
+                            </div>
+                            <div class="input-group col-sm-12">
+                                <label for="name" class="col-sm-7 control-label"> Settlement Bank Name </label>
+                                <div class="col-sm-5">
+                                    <p>{{SetlBankName}}</p>
+                                </div>
+                            </div>
+
+                            <div class="input-group col-sm-12">
+                                <label for="name" class="col-sm-7 control-label"> Settlement Date </label>
+                                <div class="col-sm-5">
+                                    <p>{{settlementdate | date: 'dd-MMMM-yyyy'}}</p>
+                                </div>
+
+                            </div>
+                            <div class="input-group col-sm-12">
+                                <label for="name" class="col-sm-7 control-label"> Transaction Type </label>
+                                <div class="col-sm-5">
+                                    <p>T &nbsp;+ &nbsp;{{SetlType}}</p>
+                                </div>
+
+                            </div>
+                       
+
+                        </div>
+                        <div class="col-lg-6">
+                            <br />   <br />
+                            <div class="input-group col-sm-12">
+                                <label for="name" class="col-sm-7 control-label"> Profit / Loss</label>
+                                <div class="col-sm-5">
+                                    <p> {{TotalCashFlow | currency:'₦' :2}}</p>
+                                </div>
+
+                            </div>
+                            <!--<div class="input-group col-sm-12">
+        <label for="name" class="col-sm-7 control-label"> Total Cash FMDQ </label>
+        <div class="col-sm-5">
+            <p>{{TotalCashFlowFMDQ | currency:'₦' :2}}</p>
+        </div>
+
+    </div>-->
+                            <!--<div class="input-group col-sm-12">
+        <label for="name" class="col-sm-7 control-label"> Total Charge </label>
+        <div class="col-sm-5">
+            <p>{{TotalCharge | currency:'₦' :2}}</p>
+        </div>
+
+    </div>-->
+
+                            <div class="input-group col-sm-12">
+                                <label for="name" class="col-sm-7 control-label"> Trade Date </label>
+                                <div class="col-sm-5">
+                                    <p>{{tradedate | date: 'dd-MMMM-yyyy'}}</p>
+                                </div>
+
+                            </div>
+                            <div class="input-group col-sm-12">
+                                <label for="name" class="col-sm-7 control-label"> Volume Bought </label>
+                                <div class="col-sm-5">
+                                    <p>{{VolumeBought | currency:'₦' :2}}</p>
+                                </div>
+
+                            </div>
+                            <div class="input-group col-sm-12">
+                                <label for="name" class="col-sm-7 control-label"> Volume Sold </label>
+                                <div class="col-sm-5">
+                                    <p>{{VolumeSold | currency:'₦' :2}}</p>
+                                </div>
+
+                            </div>
+                            <div class="input-group col-sm-12">
+                                <label for="name" class="col-sm-7 control-label"> Term to maturity </label>
+                                <div class="col-sm-5">
+                                    <p>{{Tenor}}days</p>
+                                </div>
+
+                            </div>
+                        </div><br /><br />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+
+
+</div>
