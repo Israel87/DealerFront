@@ -1,12 +1,11 @@
-﻿'use strict';
+﻿angular
+    .module('app')
+    .controller('ChangePasswordController', ChangePasswordController);
+ChangePasswordController.$inject = ['$scope', 'authService', '$location', '$routeParams', 'pinesNotifications'];
 
-define(['app'], function (app) {
+function ChangePasswordController($scope, authService, $location, $routeParams, pinesNotifications) {
 
-    var injectParams = ['$location', '$routeParams', 'authService','notificationService'];
-
-    var changePasswordController = function ($location, $routeParams, authService, notificationService) {
-        var vm = this,
-            path = '/dashboard';
+    var vm = $scope;
 
         if (!authService.user.isAuthenticated) {
             $location.path("/login");
@@ -27,23 +26,28 @@ define(['app'], function (app) {
                 function (result) {
                     console.log(result)
                     if (result.statusText == "OK") {                           
-                        notificationService.success('Success');
+                        pinesNotifications.notify({
+                            title: 'Success!',
+                            type: 'success',
+                            text: "Password changed successfully!"
+                        });
                         localStorage.setItem('isFirstLogin');
                         authService.user.isFirstLogin = false;
                         $location.path("/dashboard");
                     }
                 },
                 function (error) {
-                    console.log(error)
-                    notificationService.error(error.data != "" && error.data.Message != "" ? error.data.Message : "An error occured...try again!");
+                    console.log(error);
+                    pinesNotifications.notify({
+                        title: 'Error Occured!',
+                        type: 'error',
+                        text: "...please check your password and try again!"
+                    });
+                    //notificationService.error(error.data != "" && error.data.Message != "" ? error.data.Message : "An error occured...try again!");
                 }
                 
             )}
         };
     
 
-    changePasswordController.$inject = injectParams;
 
-    app.register.controller('changepasswordController', changePasswordController);
-
-});

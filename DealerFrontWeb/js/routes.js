@@ -288,6 +288,20 @@ angular
           controller: 'VolumeController'
         })
 
+
+
+      // Route for settings 
+
+      .state('app.changepassword', {
+          url: '/settings/changepassword',
+          templateUrl: 'app/views/pages/settings/changePassword.html',
+          ncyBreadcrumb: {
+              label: 'Change Password',
+          },
+          controller: 'ChangePasswordController'
+      })
+
+
     // Route for analysis 
       .state('app.authorizeTrade', {
           url: '/reports/authorizeTrade',
@@ -307,7 +321,7 @@ angular
           controller: 'TbillsVolumeController'
         })
 
-
+   
 
 
 }]);

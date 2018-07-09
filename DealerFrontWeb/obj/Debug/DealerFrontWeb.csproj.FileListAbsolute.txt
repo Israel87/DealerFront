@@ -18,6 +18,7 @@ C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\bin\Microsoft.CodeDom
 C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.csprojResolveAssemblyReference.cache
 C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.dll
 C:\Users\kkuyoro\Desktop\israel\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.pdb
+C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.csprojAssemblyReference.cache
 C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\roslyn\csc.exe
 C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -39,4 +40,3 @@ C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFron
 C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.csproj.CopyComplete
 C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.dll
 C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.pdb
-C:\Users\innaji\Desktop\Dev Team\DealerFront\DealerFrontWeb\obj\Debug\DealerFrontWeb.csprojAssemblyReference.cache

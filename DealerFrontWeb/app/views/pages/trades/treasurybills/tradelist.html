@@ -10,73 +10,76 @@
                 <div class="card-body">
 
                     <div class="">
-                        <p class="card-header">list of created trades</p>
+                        <p class="card-header alert-success">list of created trades</p>
                         <br />
                        
                         <br/>
                         <table class="table table-condensed table-striped table-hover" st-table="tradesByVolume" st-safe-src="tradesByVolumeDataTableFailed" id="tradelist">
-                            <thead>
-                                <tr>
-                                    <th colspan="13">
-                                        <div class="col-md-3 col-md-offset-3 col-xs-12 pull-right">
-                                            <input type="text" name="seachbox" st-search="" class="form-control" placeholder="search & filter" />
-                                        </div>
-                                    </th>
-                               
-                                </tr>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col" st-sort="InitialVolume" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary"> Initial Volume</th>
-                                    <th scope="col" st-sort="InstrumentName" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary">  Security</th>
-                                    <th scope="col" st-sort="TradeType" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary"> Trade Type</th>
-                                    <th scope="col" st-sort="TradeDate" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary"> Trade Date</th>
-                                    <th scope="col" st-sort="SettlementDate" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary"> Settlement Date</th>
-                                    <th scope="col" st-sort="TotalValue" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary">Total Value</th>
-                                    <th scope="col" st-sort="TotalCashFlow" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary">Total Cash Flow</th>
-                                    <th scope="col" st-sort="TotalCashFlowSterling" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary">Total Cash Flow(Sterling)</th>
-                                    <th scope="col" st-sort="" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary"></th>
-                                    <th scope="col" st-sort="" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary"><button class="btn btn-outline-success">Download as Excel</button></th>
+                           <!--<table class="table table-condensed table-striped table-hover" id="dtTable">-->
+                                <thead>
+                                    <tr>
+                                        <th colspan="13">
+                                            <div class="col-md-3 col-md-offset-3 col-xs-12 pull-left">
+                                                <input type="text" name="seachbox" st-search="" class="form-control" placeholder="search & filter" />
 
-                                </tr>
+                                            </div>
+                                            <button class="btn btn-outline-success pull-right">Download as Excel</button>
+                                        </th>
 
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="items in tradesByVolume">
-                                    <th scope="row">{{$index + 1}}</th>
-                                    <td>{{items.InitialVolume | currency:'₦' :0}}</td>
-                                    <td>{{items.InstrumentName}}</td>
-                                    <td>{{items.TradeType}}</td>
-                                    <td>{{items.TradeDate | date: 'dd-MMMM-yyyy' }}</td>
-                                    <td>{{items.SettlementDate | date: 'dd-MMMM-yyyy' }}</td>
-                                    <td>{{items.TotalValue}}</td>
-                                    <td>{{items.TotalCashFlow}}</td>
-                                    <td>{{items.TotalCashFlowSterling}}</td>
-                                    <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col" st-sort="InitialVolume" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary"> Initial Volume</th>
+                                        <th scope="col" st-sort="InstrumentName" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary">  Security</th>
+                                        <th scope="col" st-sort="TradeType" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary"> Trade Type</th>
+                                        <th scope="col" st-sort="TradeDate" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary"> Trade Date</th>
+                                        <th scope="col" st-sort="SettlementDate" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary"> Settlement Date</th>
+                                        <th scope="col" st-sort="TotalValue" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary">Total Value</th>
+                                        <th scope="col" st-sort="TotalCashFlow" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary">Total Cash Flow</th>
+                                        <th scope="col" st-sort="TotalCashFlowSterling" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary">Total Cash Flow(Sterling)</th>
+                                        <th scope="col" st-sort="" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary"></th>
+                                        <th scope="col" st-sort="" st-class-ascent="ti  ti-angle-up text-primary" st-class-descent="ti  ti-angle-down text-primary">Actions</th>
 
-                                    <td>
-                                        <button class="btn btn-outline-warning" data-toggle="modal" data-target=".bd-example-modal-lg" ng-click="getSummaryValues(items.InitialVolume,
+                                    </tr>
+
+                                </thead>
+                                <tbody>
+                                    <tr  ng-repeat="items in tradesByVolume">
+                                        <th scope="row">{{$index + 1}}</th>
+                                        <td>{{items.InitialVolume | currency:'₦' :0}}</td>
+                                        <td>{{items.InstrumentName}}</td>
+                                        <td>{{items.TradeType}}</td>
+                                        <td>{{items.TradeDate | date: 'dd-MMMM-yyyy' }}</td>
+                                        <td>{{items.SettlementDate | date: 'dd-MMMM-yyyy' }}</td>
+                                        <td>{{items.TotalValue}}</td>
+                                        <td>{{items.TotalCashFlow}}</td>
+                                        <td>{{items.TotalCashFlowSterling}}</td>
+                                        <td></td>
+
+                                        <td>
+                                            <button class="btn btn-outline-warning" data-toggle="modal" data-target=".bd-example-modal-lg" ng-click="getSummaryValues(items.InitialVolume,
                                                 items.InstrumentName,items.SettlementBankCharge,items.SettlementBankName, items.TotalValue, items.ApplyCharge, items.Yield,
                                                 items.SettlementType, items.Tenor, items.TotalCashFlow, items.TotalCashwithFMDQ,items.TotalCashFlowSterling, items.TradeType,
                                                 items.TotalCharge, items.VolumeBought, items.VolumeSold, items.TradeDate, items.SettlementDate, items.CounterParty)">
-                                            View more
-                                        </button>
-                                        <!--<button class="btn btn-outline-danger">Delete</button>-->
-                                    </td>
-                                </tr>
-                                <tr ng-if="tradesByVolume.length === 0">
-                                    <td colspan="13" class="text-center">There are no trades just yet.</td>
-                                </tr>
+                                                View more
+                                            </button>
+                                            <!--<button class="btn btn-outline-danger">Delete</button>-->
+                                        </td>
+                                    </tr>
+                                    <tr ng-if="tradesByVolume.length === 0">
+                                        <td colspan="13" class="text-center">There are no trades just yet.</td>
+                                    </tr>
 
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td class="text-center" colspan="13">
-                                        <div class="pagination pagination-lg" st-pagination="100" st-items-by-page="10" st-displayed-pages="10"></div>
-                                    </td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td class="text-center" colspan="13">
+                                            <div class="pagination pagination-lg" st-pagination="100" st-items-by-page="1" st-displayed-pages="10"></div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+</div>
 
                     <!--Modal view display-->
                     <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

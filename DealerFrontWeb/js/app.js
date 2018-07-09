@@ -13,14 +13,13 @@ var grayLightest =  '#f8f9fa';
 
 angular
 .module('app', [
-  'ui.router',
-  'ngRoute',
-  'oc.lazyLoad',
-  'ncy-angular-breadcrumb',
-  'angular-loading-bar',
-    'smart-table',
-    'datatables',
-  'ngJsonExportExcel'
+    'ui.router',
+    'ngRoute',
+    'oc.lazyLoad',
+    'ncy-angular-breadcrumb',
+    'angular-loading-bar',
+    'smart-table', 
+    'datatables'
 ])
 .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
   cfpLoadingBarProvider.includeSpinner = false;

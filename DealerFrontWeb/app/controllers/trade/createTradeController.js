@@ -4,7 +4,7 @@
 
 CreateTradeController.$inject = ['$scope', 'authService', '$location', '$routeParams', 'tradeVolumeService', 'securityService', 'settlementbankService', 'createTradeService', '$timeout', '$window'];
 
-function CreateTradeController($scope, authService, $location, $routeParams, tradeVolumeService, securityService, settlementbankService, createTradeService, pinesNotifications, DTOptionsBuilder, $timeout, $window) {
+function CreateTradeController($scope, authService, $location, $routeParams, tradeVolumeService, securityService, settlementbankService, createTradeService, pinesNotifications, $timeout, $window) {
 
     if (!authService.user.isAuthenticated) {
         $location.path("/login");
@@ -215,7 +215,7 @@ function CreateTradeController($scope, authService, $location, $routeParams, tra
                 }
             );
    
-                $('#dtTable').DataTable({
+            $('#dtTable').DataTable({
                     "dom": 'Bfrtip',
                     "buttons": [
                         {

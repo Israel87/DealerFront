@@ -14,7 +14,10 @@ function LoginController($scope, authService, $location, $routeParams) {
 
     //logout on login page load
     authService.logout();
-    
+    vm.logOut = function () {
+        authService.logout();
+    }
+
     vm.initPage = function () {
         vm.email = $routeParams.email;
     }
